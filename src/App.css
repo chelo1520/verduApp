@@ -1,0 +1,46 @@
+:root{
+    --color-principal: #53B175;
+}
+
+
+.app{
+    color: black;
+    margin: auto;
+    padding: 0;
+}
+
+.nav{
+    justify-content: space-evenly;
+    background-color: white;
+    font-size: 20px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    bottom: 0;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    text-shadow: 0 0 1px currentColor;
+}
+
+
+.main-content{
+    background-color: gray;
+}
+
+
+.nav-link{
+    text-decoration: none;
+    color: inherit;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    padding: 5px;
+}
+.nav-link:hover{
+    color: var(--color-principal);
+    border: 2px solid var(--color-principal);
+}
+.nav-link.active{
+    color: var(--color-principal);
+    font-weight: bold;
+    border: 2px solid var(--color-principal);
+}
