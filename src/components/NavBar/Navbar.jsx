@@ -13,11 +13,15 @@ export const Navbar = () => {
         </li>
 
         <li className="nav-item">
-          <NavLink to="/cart" className={({isActive}) => `nav-link ${isActive ? "active" : ""}`}><i className="bi bi-cart2"></i></NavLink>
+          <NavLink to="/cart" className={({isActive}) => `nav-link ${isActive ? "active" : ""}`}>
+            <i className="bi bi-cart2"></i>
+          </NavLink>
         </li>
 
         <li className="nav-item">
-          <NavLink to="/about" className={({isActive}) => `nav-link ${isActive ? "active" : ""}`}><i className="bi bi-file-earmark-person"></i></NavLink>
+          <NavLink to="/about" className={({isActive}) => `nav-link ${isActive ? "active" : ""}`}>
+            <i className="bi bi-file-earmark-person"></i>
+          </NavLink>
         </li>
 
       </ul>
