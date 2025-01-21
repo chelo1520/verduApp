@@ -20,7 +20,7 @@ export const Navbar = () => {
 
         <li className="nav-item">
           <NavLink to="/about" className={({isActive}) => `nav-link ${isActive ? "active" : ""}`}>
-            <i className="bi bi-file-earmark-person"></i>
+            <i className="bi bi-question-circle"></i>
           </NavLink>
         </li>
 

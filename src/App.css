@@ -12,6 +12,7 @@
 }
 
 .nav{
+    z-index: 1000;
     justify-content: space-evenly;
     background-color: white;
     font-size: 29px;
@@ -30,27 +31,28 @@
 .main-content{
     max-width: 700px;
     margin-top: 10px;
+    margin-bottom: 70px;
 }
 
 
 .nav-link{
     text-decoration: none;
     color: inherit;
-    border: 1px solid transparent;
-    border-radius: 5px;
+    border: 2px solid transparent;
     padding: 0;
+    margin-bottom: 10px;
 }
 .nav-link i{
     padding: 5px;
 }
 .nav-link:hover{
     color: var(--color-principal);
-    border: 1px solid var(--color-principal);
+    border-bottom: 2px solid var(--color-principal);
 }
 .nav-link.active{
     color: var(--color-principal);
     font-weight: bold;
-    border: 1px solid var(--color-principal);
+    border-bottom: 2px solid var(--color-principal);
 }
 
 .img-banner{
@@ -124,4 +126,62 @@
     margin-top: 10px;
     margin-bottom: 20px;
     max-width: 450px;
+}
+
+
+/* Productos */
+.card{
+    margin: 0;
+    padding: 0;
+    height: 12rem;
+    align-self: center;
+}
+.precio-button{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: .2rem;
+}
+.precio{
+    text-align: center;
+    margin: 0;
+    font-weight: 700;
+}
+.oferta{
+    margin: 0;
+    font-size: .8rem;
+    color: #53B175;
+}
+.card-title{
+    font-size: 1.2rem;
+    margin: 0;
+}
+.card-img-top{
+    width: 100%; 
+    height: 50%;
+    object-fit: contain;
+}
+.card-body{
+    height: 50%;
+    padding: 0 10px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.button-add{
+    background-color: var(--color-principal);
+    border-radius: 13px;
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    text-shadow: 0 0 1px currentColor;
+}
+#productos-lista{
+    width: 100%;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(auto, 8rem));
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
 }
