@@ -9,18 +9,18 @@ function App() {
 
 
   return (
-    <BrowserRouter>
-      <div className='app'>
-          <Navbar/>
-          <div className='main-content container'>
-            <Routes>
-              <Route path='/' element={<Home/>}/>
-              <Route path='/cart' element={<Cart/>}/>
-              <Route path='/about' element={<About/>}/>
-            </Routes>
-          </div>
-      </div>
-    </BrowserRouter>
+      <BrowserRouter>
+        <div className='app'>
+            <Navbar/>
+            <div className='main-content container'>
+              <Routes>
+                <Route path='/' element={<Home/>}/>
+                <Route path='/cart' element={<Cart/>}/>
+                <Route path='/about' element={<About/>}/>
+              </Routes>
+            </div>
+        </div>
+      </BrowserRouter>
   )
 }
 
