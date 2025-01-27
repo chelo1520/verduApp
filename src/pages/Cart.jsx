@@ -19,10 +19,10 @@ export const Cart = () => {
       <h2>My Carrito</h2>
 
       <div className="card row d-flex justify-content-center card-carrito">
-        <div className="col-4">
+        <div className="col-4 h-100">
           <img src="../public/img-verduras/tomate.webp" className="img-carrito" alt="" />
         </div>
-        <div className="col-4 sumador-y-titulo d-flex justify-content-center">
+        <div className="col-4 sumador-y-titulo d-flex justify-content-between pt-2 pb-2">
           
           <div className="titulo-sub">
             <h3>Titulo</h3>

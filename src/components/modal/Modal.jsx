@@ -16,11 +16,11 @@ export const Modal = ({productoSelect, cancelarCarrito}) => {
                       <p className="oferta fs-2">{productoSelect.unidad}</p>
                       <div className="precio-button row">
                           <div className="row mb-2">
-                              <p className="col-4 m-0 text-center align-text-center fs-6 fw-bold">${productoSelect.precio}</p>
-                              <div className="col-8 d-flex align-items-center justify-content-start p-0">
+                              <p className="col-4 m-0 text-center align-text-center fs-6 fw-bold p-0">${productoSelect.precio}</p>
+                              <div className="col-8 d-flex align-items-start justify-content-start">
                                   <label htmlFor="input-add" className="text-secondary">Kg.
                                   </label>
-                                  <input type="number" className=""  id="input-add" aria-valuemin={1} aria-valuemax={16} defaultValue={1}/>
+                                  <input type="number" className="p-0 ms-1"  id="input-add" aria-valuemin={1} aria-valuemax={16} defaultValue={1}/>
                               </div>
                           </div>
                           <div className="d-flex justify-content-between ">

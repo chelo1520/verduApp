@@ -222,7 +222,7 @@
 }
 #precio-button{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     margin-top: .2rem;
 }
@@ -259,6 +259,7 @@
     font-size: 1rem;
     font-weight: 700;
     text-shadow: 0 0 1px currentColor;
+    width: 70%;
 }
 #button-add:hover{
     background-color: #7dc095;
@@ -349,6 +350,7 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    flex-direction: column;
     justify-content: start;
 }
 .botonesCantidad{
