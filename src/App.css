@@ -240,7 +240,6 @@
     font-size: 1.2rem;
     margin: 0;
     font-size: clamp(14px, 2vw, 20px); /* Escala entre 14px y 20px según el espacio */
-    text-align: center; /* Centrar el texto */
 }
 #card-img-top{
     width: 100%; 
@@ -266,5 +265,92 @@
 }
 
 #input-add{
-    width: 60px;
+    width: 40px;
+    margin-left: 5px;
+}
+
+
+/* Carrito */
+.card-carrito{
+    height: 150px;
+    margin: 10px 0 10px 0;
+}
+
+.img-carrito{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.precio-carrito{
+    text-align: end;
+    font-size: 2rem;
+    font-weight: 600;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    height: 100%;
+    display: flex;
+}
+.precio{
+    height: auto;
+}
+.boton-quitar{
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 12px;
+    font-weight: 700;
+}
+
+.boton-sumar{
+    background-color: var(--color-principal);
+    color: white;
+    font-size: 1.5rem;
+    border-radius: 15px;
+    font-weight: 900;
+    text-align: center;
+    padding: 10px;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box; /* Asegura que padding no aumente el ancho */
+}
+
+.contador-kg{
+    /* font-size: 1.5rem; */
+    /* margin: 0 5px 0 5px; */
+    /* padding: 0 5px 0 5px; */
+    margin: 0;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    box-sizing: border-box; /* Asegura que padding no aumente el ancho */
+    /* overflow: hidden; */
+    width: 4ch;
+}
+
+.titulo-sub{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.titulo-sub h3{
+    font-size: 1.6rem;
+}
+.titulo-sub h5{
+    font-size: 1rem;
+    color: gray;
+}
+.sumador-y-titulo{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+.botonesCantidad{
+    gap: 5px;
 }
