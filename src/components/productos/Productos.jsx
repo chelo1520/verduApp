@@ -44,8 +44,8 @@ export const Productos = () => {
                 }
         </div>
 
-       
-        {isProduct ?  <Modal productoSelect={productoSeleccionado} cancelarCarrito={cancelarCarrito}/> : ""}
+        
+        {isProduct ?  <Modal productoSelect={productoSeleccionado} setIsProduct={setIsProduct} cancelarCarrito={cancelarCarrito}/> : ""}
     </div>
   )
 }

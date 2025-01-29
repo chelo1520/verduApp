@@ -1,9 +1,31 @@
-export const Modal = ({productoSelect, cancelarCarrito}) => {
+import { useContext, useState } from "react"
+import { productosContext } from "../../context/ProductosProvider"
 
-  const agregarCarrito = () => {
-    console.log("agregar al carrito")
+export const Modal = ({productoSelect, setIsProduct ,cancelarCarrito}) => {
+
+  const {agregarCarrito} = useContext(productosContext);
+  const [kilos, setKilos] = useState(1)
+
+  const x = (producto, kilos) => {
+    agregarCarrito(producto, kilos)
+    setIsProduct(false)
   }
 
+  const agregarKilosHome = (value) => {
+
+    const numeroKilos = parseInt(value)
+
+    if (!isNaN(numeroKilos)) {
+      setKilos(numeroKilos); // Actualizamos el estado si es un número válido
+    } else {
+      setKilos(1); // Valor por defecto si es NaN
+    }
+
+  }
+
+  const handleFocus = (event) => {
+    event.target.select(); // Seleccionar todo el contenido al enfocar
+  }
 
   return (
     <div id="producto-seleccion">
@@ -20,11 +42,20 @@ export const Modal = ({productoSelect, cancelarCarrito}) => {
                               <div className="col-8 d-flex align-items-start justify-content-start">
                                   <label htmlFor="input-add" className="text-secondary">Kg.
                                   </label>
-                                  <input type="number" className="p-0 ms-1"  id="input-add" aria-valuemin={1} aria-valuemax={16} defaultValue={1}/>
+                                  <input
+                                    onFocus={handleFocus}
+                                    value={kilos}
+                                    onChange={(e) => agregarKilosHome(e.target.value)}
+                                    type="number"
+                                    min={1}
+                                    className="p-0 ms-1"
+                                    id="input-add"
+                                    aria-valuemax={16}
+                                  />
                               </div>
                           </div>
                           <div className="d-flex justify-content-between ">
-                              <button href="#" className="btn"  id="button-add" onClick={() => agregarCarrito(productoSelect)}>Agregar</button>
+                              <button href="#" className="btn"  id="button-add" onClick={() => x(productoSelect, kilos)}>Agregar</button>
                               <button href="#" className="btn btn-danger"  id="button-cancelar" onClick={cancelarCarrito}>X</button>
                           </div>
                       </div>
@@ -34,5 +65,3 @@ export const Modal = ({productoSelect, cancelarCarrito}) => {
   )
 }
 
-
-// Tengo que pasarle un onchange a el button para pasarlo al carrito

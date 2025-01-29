@@ -316,6 +316,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 1px solid gray;
     box-sizing: border-box; /* Asegura que padding no aumente el ancho */
 }
 
@@ -323,7 +324,7 @@
     /* font-size: 1.5rem; */
     /* margin: 0 5px 0 5px; */
     /* padding: 0 5px 0 5px; */
-    margin: 0;
+    margin: 2px;
     text-align: center;
     font-size: 1rem;
     font-weight: bold;
@@ -339,20 +340,19 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .titulo-sub h3{
-    font-size: 1.6rem;
+    font-size: 1.2rem;
+    text-align: start;
 }
 .titulo-sub h5{
     font-size: 1rem;
     color: gray;
+    text-align: start;
 }
 .sumador-y-titulo{
     height: 100%;
     display: flex;
-    align-items: center;
-    flex-wrap: wrap;
+    align-items: start;
+    /* flex-wrap: wrap; */
     flex-direction: column;
     justify-content: start;
-}
-.botonesCantidad{
-    gap: 5px;
 }
