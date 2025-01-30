@@ -2,7 +2,7 @@ import { useContext, useState } from "react"
 import { productosContext } from "../../context/ProductosProvider";
 import { Modal } from "../modal/Modal";
 
-export const Productos = () => {
+export const Productos = ({productosFiltrados}) => {
 
     const { productos } = useContext(productosContext);
     const [isProduct, setIsProduct] = useState(false)
@@ -12,10 +12,14 @@ export const Productos = () => {
         setProductoSeleccionado(prod)
         setIsProduct(true)
     }
-
+    
     const cancelarCarrito = () =>{
         setIsProduct(false)
     }
+
+    const mostrarProductos = productosFiltrados?.length > 0 
+    ? productosFiltrados
+    : productos
 
   return (
     <div className="container mt-2">
@@ -23,23 +27,22 @@ export const Productos = () => {
             <h4>Productos</h4>
         </div>
         <div id="productos-lista">
-                {productos ? productos.map((indice, index) => 
-                    <li className="card" key={index}>
-                        <img src={indice.imagen} className="card-img-top" alt={indice.nombre}/>
-                        <div className="card-body">
-                            <h6 className="card-title">{indice.nombre}</h6>
-                            <p className="oferta">{indice.unidad}</p>
-                            <div className="precio-button">
-                                <p className="precio">{indice.precio}</p>
-                                <button onClick={() => mostrarProducto(indice)} href="#" className="btn button-add"><i className="bi bi-plus-lg"></i></button>
-                            </div>
-                        </div>
-                    </li>
-            
-                )
 
-                
-                : <p>Cargando...</p>
+                {mostrarProductos && mostrarProductos.length > 0 
+                    ? 
+                        mostrarProductos.map((producto) => 
+                            <li className="card" key={producto.id}>
+                                <img src={producto.imagen} className="card-img-top" alt={producto.nombre}/>
+                                <div className="card-body">
+                                    <h6 className="card-title">{producto.nombre}</h6>
+                                    <p className="oferta">{producto.unidad}</p>
+                                    <div className="precio-button">
+                                        <p className="precio">{producto.precio}</p>
+                                        <button onClick={() => mostrarProducto(producto)} href="#" className="btn button-add"><i className="bi bi-plus-lg"></i></button>
+                                    </div>
+                                </div>
+                            </li>)
+                    : <p>Cargando...</p> 
 
                 }
         </div>

@@ -10,10 +10,10 @@ export const Cart = ({producto}) => {
 
   return (
     <div>
-      <h2>My Carrito</h2>
+      <h2>Mi Carrito</h2>
 
 
-      {cart ? cart.map((prod) => (
+      {cart && cart.length > 0 ? cart.map((prod) => (
             <li key={uuidv4()} className="card row d-flex justify-content-center card-carrito">
               <div className="col-4 h-100">
                 <img src={prod.imagen} className="img-carrito" alt="" />
@@ -38,7 +38,7 @@ export const Cart = ({producto}) => {
               </div>
             </li>
       )) :
-        <h3>Agrega productos!</h3>
+        <h3 className="agregarProductos">Agrega productos!</h3>
       }
 
     </div>

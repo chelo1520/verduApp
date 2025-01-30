@@ -352,7 +352,26 @@
     height: 100%;
     display: flex;
     align-items: start;
-    /* flex-wrap: wrap; */
     flex-direction: column;
     justify-content: start;
+}
+
+.agregarProductos{
+    color: rgb(112, 107, 107);
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* Filtros */
+
+.filtros{
+    text-align: center;
+    background-color: #c0f2d3;
+    border-radius: 10px;
+    border: 1px solid gray;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+.filtros:hover{
+    border: 1px solid black;
 }

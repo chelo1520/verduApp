@@ -47,10 +47,9 @@ export const ProductosProvider = ({children}) => {
 
     const fetchProductos = async () => {
       try {
-        const resultado = await fetch("../public/data/productos.json");
+        const resultado = await fetch("../public/data/productosLista.json");
         const data = await resultado.json();
         setProductos(data)
-        console.log(data)
       } catch (error) {
         console.log(error);
       }
@@ -62,7 +61,7 @@ export const ProductosProvider = ({children}) => {
 
   return (
     <productosContext.Provider value={{
-        productos, 
+        productos,
         agregarCarrito, 
         cart, 
         eliminarProducto, 
