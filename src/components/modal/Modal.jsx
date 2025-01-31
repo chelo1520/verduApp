@@ -48,7 +48,7 @@ export const Modal = ({productoSelect, setIsProduct ,cancelarCarrito}) => {
                                     onChange={(e) => agregarKilosHome(e.target.value)}
                                     type="number"
                                     min={1}
-                                    className="p-0 ms-1"
+                                    className="ms-1"
                                     id="input-add"
                                     aria-valuemax={16}
                                   />

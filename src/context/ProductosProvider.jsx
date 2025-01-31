@@ -8,34 +8,41 @@ export const ProductosProvider = ({children}) => {
 
   const [productos, setProductos] = useState([]);
   const [cart, setCart] = useState([]);
+  const [total, setTotal] = useState(null)
 
   const agregarCarrito = (product, kilos) => {
     
     setCart((cart) => {
+      
       const productoExistente = cart.find((item) => item.nombre === product.nombre);
 
-      if(productoExistente){
-        return cart.map((item) => 
-                  item.nombre === product.nombre ? {...item , kilos: item.kilos + kilos } : item
+      const nuevoCart = productoExistente ?
+        cart.map((item) => 
+                  item.nombre === product.nombre ? {...item , kilos: item.kilos + kilos, sumaPrecio: item.precio * (item.kilos + 1)} : item
                 )
-      }else{
-        return [...cart, {...product, kilos}];
-      }
-     
+      :
+        [...cart, {...product, kilos, sumaPrecio: product.precio * kilos  }];
+      
+        const sumador = nuevoCart.reduce((acumulador, item) => acumulador + item.sumaPrecio, 0)
+        setTotal(sumador)
+    
+        return nuevoCart;
     })
+
   }
-  
+
   const eliminarProducto = (product) => {
     setCart((cart) => cart.filter((item) => item.nombre !== product.nombre))
   }
 
-  const incrementarKilos = (nombre) => {
+  const incrementarKilos = (producto) => {
     setCart((cart) =>
       cart.map((item) =>
-        item.nombre === nombre ? { ...item, kilos: item.kilos + 1 } : item
+        item.nombre === producto.nombre ? { ...item, kilos: item.kilos + 1, sumaPrecio: item.precio * (item.kilos + 1)} : item
       )
     );
   };
+  
 
   const restarKilos = (nombre) => {
     setCart((cart) => cart.map((item) => 
@@ -66,7 +73,8 @@ export const ProductosProvider = ({children}) => {
         cart, 
         eliminarProducto, 
         incrementarKilos, 
-        restarKilos
+        restarKilos,
+        total
       }}>
 
       {children}
