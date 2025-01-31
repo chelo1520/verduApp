@@ -36,20 +36,37 @@ export const ProductosProvider = ({children}) => {
   }
 
   const incrementarKilos = (producto) => {
-    setCart((cart) =>
-      cart.map((item) =>
-        item.nombre === producto.nombre ? { ...item, kilos: item.kilos + 1, sumaPrecio: item.precio * (item.kilos + 1)} : item
-      )
-    );
+    setCart((cart) => {
+      const nuevoCart = cart.map((item) =>
+        item.nombre === producto.nombre
+          ? { ...item, kilos: item.kilos + 1, sumaPrecio: item.precio * (item.kilos + 1) }
+          : item
+      );
+  
+      const sumador = nuevoCart.reduce((acumulador, item) => acumulador + item.sumaPrecio, 0);
+      setTotal(sumador);
+  
+      return nuevoCart; 
+    });
   };
   
+  
 
-  const restarKilos = (nombre) => {
-    setCart((cart) => cart.map((item) => 
-      item.nombre === nombre ? item.kilos > 1 ? {...item, kilos: item.kilos - 1} : item : item))
-  }
-
-
+  const restarKilos = (producto) => {
+    setCart((cart) => {
+      const nuevoCart = cart.map((item) =>
+        item.nombre === producto.nombre
+          ? item.kilos > 1
+            ? { ...item, kilos: item.kilos - 1, sumaPrecio: item.precio * (item.kilos - 1) }
+            : item
+          : item
+      );
+      
+      const sumador = nuevoCart.reduce((acc, item) => acc + item.sumaPrecio, 0)
+      setTotal(sumador)
+      return nuevoCart;
+    });
+  };
   useEffect(() => {
 
     const fetchProductos = async () => {
