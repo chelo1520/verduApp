@@ -32,7 +32,15 @@ export const ProductosProvider = ({children}) => {
   }
 
   const eliminarProducto = (product) => {
-    setCart((cart) => cart.filter((item) => item.nombre !== product.nombre))
+    setCart((cart) => {
+      const nuevoCart = cart.filter((item) => item.nombre !== product.nombre)
+
+      const sumador = nuevoCart.reduce((acc, item) => acc + item.sumaPrecio,0)
+      
+      setTotal(sumador)
+
+      return nuevoCart
+    })
   }
 
   const incrementarKilos = (producto) => {

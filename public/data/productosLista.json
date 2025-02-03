@@ -2,7 +2,7 @@
     {
         "nombre": "Lechuga crespa",
         "oferta": true,
-        "precio": 7000,
+        "precio": 70,
         "tipo": "verdura",
         "unidad": "unidad",
         "stock": 40,

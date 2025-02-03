@@ -37,7 +37,7 @@ export const Productos = ({productosFiltrados}) => {
                                     <h6 className="card-title">{producto.nombre}</h6>
                                     <p className="oferta">{producto.unidad}</p>
                                     <div className="precio-button">
-                                        <p className="precio">{producto.precio}</p>
+                                        <p className="precio">$ {producto.precio}</p>
                                         <button onClick={() => mostrarProducto(producto)} href="#" className="btn button-add"><i className="bi bi-plus-lg"></i></button>
                                     </div>
                                 </div>
