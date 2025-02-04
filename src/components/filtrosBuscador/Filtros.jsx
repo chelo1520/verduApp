@@ -35,6 +35,17 @@ export const Filtros = ({ setTiposFiltros, tiposFiltros }) => {
         <img width={"50px"} src="../public/filtros/frutas.png" alt="icono-frutas" />
         Frutas
       </button>
+
+      <button
+        className="btn d-flex flex-column filtros"
+        style={{
+          backgroundColor: tiposFiltros === "fruta" ? "#c0f2d3" : "white",
+        }}
+        onClick={() => setTiposFiltros("fruta")}
+      >
+        <img width={"50px"} src="../public/filtros/frutas.png" alt="icono-frutas" />
+        Frutas
+      </button>
     </div>
   );
 };
