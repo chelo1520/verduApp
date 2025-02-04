@@ -1,6 +1,12 @@
 import { useState } from "react";
 
-export const Filtros = ({ setTiposFiltros, tiposFiltros }) => {
+export const Filtros = ({ setTiposFiltros, tiposFiltros , setOfertas}) => {
+
+  const filtroBotones = (tipo) => {
+    setTiposFiltros(tipo)
+    setOfertas(false)
+  }
+
   return (
     <div className="container d-flex justify-content-evenly mt-2">
       <button
@@ -8,7 +14,7 @@ export const Filtros = ({ setTiposFiltros, tiposFiltros }) => {
         style={{
           backgroundColor: tiposFiltros === "todo" ? "#c0f2d3" : "white",
         }}
-        onClick={() => setTiposFiltros("todo")}
+        onClick={() => filtroBotones("todo")}
       >
         <img width={"50px"} src="../public/filtros/todo.png" alt="icono-todo" />
         Todo
@@ -19,7 +25,7 @@ export const Filtros = ({ setTiposFiltros, tiposFiltros }) => {
         style={{
           backgroundColor: tiposFiltros === "verdura" ? "#c0f2d3" : "white",
         }}
-        onClick={() => setTiposFiltros("verdura")}
+        onClick={() => filtroBotones("verdura")}
       >
         <img width={"50px"} src="../public/filtros/verduras.png" alt="icono-verduras" />
         Verduras
@@ -30,7 +36,7 @@ export const Filtros = ({ setTiposFiltros, tiposFiltros }) => {
         style={{
           backgroundColor: tiposFiltros === "fruta" ? "#c0f2d3" : "white",
         }}
-        onClick={() => setTiposFiltros("fruta")}
+        onClick={() => filtroBotones("fruta")}
       >
         <img width={"50px"} src="../public/filtros/frutas.png" alt="icono-frutas" />
         Frutas
@@ -39,12 +45,12 @@ export const Filtros = ({ setTiposFiltros, tiposFiltros }) => {
       <button
         className="btn d-flex flex-column filtros"
         style={{
-          backgroundColor: tiposFiltros === "fruta" ? "#c0f2d3" : "white",
+          backgroundColor: tiposFiltros === "frutas" ? "#c0f2d3" : "white",
         }}
-        onClick={() => setTiposFiltros("fruta")}
+        onClick={() => setOfertas(true)}
       >
-        <img width={"50px"} src="../public/filtros/frutas.png" alt="icono-frutas" />
-        Frutas
+        <img width={"50px"} src="../public/filtros/oferta-especial.png" alt="icono-frutas" />
+        Ofertas
       </button>
     </div>
   );
