@@ -128,7 +128,9 @@
     margin-bottom: 20px;
     max-width: 450px;
 }
-
+.filtros{
+    padding: 5px;
+}
 
 /* Productos */
 .card{
