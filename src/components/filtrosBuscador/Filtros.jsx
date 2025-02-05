@@ -1,10 +1,15 @@
 import { useState } from "react";
 
-export const Filtros = ({ setTiposFiltros, tiposFiltros , setOfertas}) => {
+export const Filtros = ({ setTiposFiltros, tiposFiltros , setOfertas , ofertas}) => {
 
   const filtroBotones = (tipo) => {
     setTiposFiltros(tipo)
     setOfertas(false)
+  }
+
+  const filtrarOfertas = () => {
+    setTiposFiltros("todo")
+    setOfertas(true)
   }
 
   return (
@@ -12,7 +17,7 @@ export const Filtros = ({ setTiposFiltros, tiposFiltros , setOfertas}) => {
       <button
         className="btn d-flex flex-column filtros"
         style={{
-          backgroundColor: tiposFiltros === "todo" ? "#c0f2d3" : "white",
+          backgroundColor: tiposFiltros === "todo" && ofertas !== true ? "#c0f2d3" : "white",
         }}
         onClick={() => filtroBotones("todo")}
       >
@@ -45,9 +50,9 @@ export const Filtros = ({ setTiposFiltros, tiposFiltros , setOfertas}) => {
       <button
         className="btn d-flex flex-column filtros"
         style={{
-          backgroundColor: tiposFiltros === "frutas" ? "#c0f2d3" : "white",
+          backgroundColor: tiposFiltros === "todo" && ofertas === true ? "#c0f2d3" : "white",
         }}
-        onClick={() => setOfertas(true)}
+        onClick={filtrarOfertas}
       >
         <img width={"50px"} src="../public/filtros/oferta-especial.png" alt="icono-frutas" />
         Ofertas
