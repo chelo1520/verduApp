@@ -17,7 +17,7 @@ export const Filtros = ({ setTiposFiltros, tiposFiltros , setOfertas , ofertas})
       <button
         className="btn d-flex flex-column filtros"
         style={{
-          backgroundColor: tiposFiltros === "todo" && ofertas !== true ? "#c0f2d3" : "white",
+          backgroundColor: tiposFiltros === "todo" && ofertas !== true ? "#53B175" : "white",
         }}
         onClick={() => filtroBotones("todo")}
       >
@@ -28,7 +28,7 @@ export const Filtros = ({ setTiposFiltros, tiposFiltros , setOfertas , ofertas})
       <button
         className="btn d-flex flex-column filtros"
         style={{
-          backgroundColor: tiposFiltros === "verdura" ? "#c0f2d3" : "white",
+          backgroundColor: tiposFiltros === "verdura" ? "#53B175" : "white",
         }}
         onClick={() => filtroBotones("verdura")}
       >
@@ -39,7 +39,7 @@ export const Filtros = ({ setTiposFiltros, tiposFiltros , setOfertas , ofertas})
       <button
         className="btn d-flex flex-column filtros"
         style={{
-          backgroundColor: tiposFiltros === "fruta" ? "#c0f2d3" : "white",
+          backgroundColor: tiposFiltros === "fruta" ? "#53B175" : "white",
         }}
         onClick={() => filtroBotones("fruta")}
       >
@@ -50,7 +50,7 @@ export const Filtros = ({ setTiposFiltros, tiposFiltros , setOfertas , ofertas})
       <button
         className="btn d-flex flex-column filtros"
         style={{
-          backgroundColor: tiposFiltros === "todo" && ofertas === true ? "#c0f2d3" : "white",
+          backgroundColor: tiposFiltros === "todo" && ofertas === true ? "#53B175" : "white",
         }}
         onClick={filtrarOfertas}
       >

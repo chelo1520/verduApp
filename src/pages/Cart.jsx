@@ -1,9 +1,9 @@
-import { useContext, useState } from "react"
-import { productosContext } from "../context/ProductosProvider";
+import { useContext } from "react"
+import { carritoContext } from "../context/CarritoProvider";
 
 export const Cart = ({producto}) => {
 
-  const {cart, eliminarProducto, incrementarKilos, restarKilos, total} = useContext(productosContext); 
+  const {cart, eliminarProducto, incrementarKilos, restarKilos, total} = useContext(carritoContext); 
 
 
   return (

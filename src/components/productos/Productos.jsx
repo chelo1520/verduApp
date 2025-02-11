@@ -1,6 +1,6 @@
 import { useContext, useState } from "react"
 import { productosContext } from "../../context/ProductosProvider";
-import { Modal } from "../modal/Modal";
+import { ModalProductos } from "../modal/ModalProductos";
 
 export const Productos = ({productosFiltrados}) => {
 
@@ -48,7 +48,7 @@ export const Productos = ({productosFiltrados}) => {
         </div>
 
         
-        {isProduct ?  <Modal productoSelect={productoSeleccionado} setIsProduct={setIsProduct} cancelarCarrito={cancelarCarrito}/> : ""}
+        {isProduct ?  <ModalProductos productoSelect={productoSeleccionado} setIsProduct={setIsProduct} cancelarCarrito={cancelarCarrito}/> : ""}
     </div>
   )
 }

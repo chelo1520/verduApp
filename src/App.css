@@ -149,6 +149,8 @@
     text-align: center;
     margin: 0;
     font-weight: 700;
+    font-size: 1.2rem;
+    height: auto;
 }
 .oferta{
     margin: 0;
@@ -231,7 +233,8 @@
 #precio{
     text-align: center;
     margin: 0;
-    font-weight: 700;
+    font-weight: 600;
+
 }
 #oferta{
     margin: 0;
@@ -307,10 +310,7 @@ overflow-y: auto;
     height: 100%;
     display: flex;
 }
-.precio{
-    height: auto;
-    font-size: 1.5rem;
-}
+
 .boton-quitar{
     height: 40px;
     width: 40px;
@@ -435,4 +435,38 @@ overflow-y: auto;
 }
 .filtros:hover{
     border: 1px solid black;
+}
+
+
+/*Combos*/
+
+
+.combo-descripcion{
+    display: flex;
+    align-items: center;
+
+}
+
+.combo-container{
+    height: auto;
+}
+.img-combo{
+    display: flex;
+    align-items: center;
+}
+.titulo-combo{
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+.precio-combo{
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+.boton-combo{
+    border: none;
+    background-color: var(--color-principal);
+}
+.boton-combo i{
+    font-size: 1.5rem;
+    padding: 0;
 }

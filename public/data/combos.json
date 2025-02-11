@@ -1,0 +1,107 @@
+[
+      {
+        "id": 1,
+        "nombre": "Combo Ensalada Fresca",
+        "tipo": "verdura",
+        "productos": [
+          { "nombre": "Lechuga", "peso": "500g" },
+          { "nombre": "Tomate", "peso": "1kg" },
+          { "nombre": "Cebolla", "peso": "500g" },
+          { "nombre": "Zanahoria", "peso": "500g" },
+          { "nombre": "Pepino", "peso": "500g" }
+        ],
+        "descripcion": "Ideal para preparar ensaladas saludables y frescas.",
+        "precio": 8000,
+        "imagen": "https://ejemplo.com/imagenes/combo-ensalada.jpg"
+      },
+      {
+        "id": 2,
+        "nombre": "Combo Frutal",
+        "tipo": "fruta",
+        "productos": [
+          { "nombre": "Manzana", "peso": "1kg" },
+          { "nombre": "Banana", "peso": "1.2kg" },
+          { "nombre": "Naranja", "peso": "1kg" },
+          { "nombre": "Pera", "peso": "1kg" },
+          { "nombre": "Uva", "peso": "500g" }
+        ],
+        "descripcion": "Una selección de frutas frescas y deliciosas.",
+        "precio": 9000,
+        "imagen": "https://ejemplo.com/imagenes/combo-frutal.jpg"
+      },
+      {
+        "id": 3,
+        "nombre": "Combo Sopa Casera",
+        "tipo": "verdura",
+        "productos": [
+          { "nombre": "Papa", "peso": "1kg" },
+          { "nombre": "Zanahoria", "peso": "500g" },
+          { "nombre": "Cebolla", "peso": "500g" },
+          { "nombre": "Zapallo", "peso": "1kg" },
+          { "nombre": "Apio", "peso": "300g" }
+        ],
+        "descripcion": "Todo lo necesario para hacer una sopa casera y nutritiva.",
+        "precio": 7500,
+        "imagen": "https://ejemplo.com/imagenes/combo-sopa.jpg"
+      },
+      {
+        "id": 4,
+        "nombre": "Combo Parrillero",
+        "tipo": "verdura",
+        "productos": [
+          { "nombre": "Morrón Rojo", "peso": "500g" },
+          { "nombre": "Cebolla", "peso": "500g" },
+          { "nombre": "Papa", "peso": "1kg" },
+          { "nombre": "Batata", "peso": "1kg" },
+          { "nombre": "Ajo", "peso": "200g" }
+        ],
+        "descripcion": "Perfecto para acompañar tu asado con vegetales a la parrilla.",
+        "precio": 8500,
+        "imagen": "https://ejemplo.com/imagenes/combo-parrillero.jpg"
+      },
+      {
+        "id": 5,
+        "nombre": "Combo Energético",
+        "tipo": "fruta",
+        "productos": [
+          { "nombre": "Banana", "peso": "1kg" },
+          { "nombre": "Manzana", "peso": "1kg" },
+          { "nombre": "Naranja", "peso": "1kg" },
+          { "nombre": "Kiwi", "peso": "500g" },
+          { "nombre": "Frutilla", "peso": "500g" }
+        ],
+        "descripcion": "Frutas llenas de energía para tu día.",
+        "precio": 9500,
+        "imagen": "https://ejemplo.com/imagenes/combo-energetico.jpg"
+      },
+      {
+        "id": 6,
+        "nombre": "Combo Detox",
+        "tipo": "fruta",
+        "productos": [
+          { "nombre": "Limón", "peso": "500g" },
+          { "nombre": "Jengibre", "peso": "200g" },
+          { "nombre": "Pepino", "peso": "500g" },
+          { "nombre": "Apio", "peso": "300g" },
+          { "nombre": "Manzana Verde", "peso": "1kg" }
+        ],
+        "descripcion": "Ingredientes ideales para jugos desintoxicantes y saludables.",
+        "precio": 9200,
+        "imagen": "https://ejemplo.com/imagenes/combo-detox.jpg"
+      },
+      {
+        "id": 7,
+        "nombre": "Combo Desayuno Saludable",
+        "tipo": "fruta",
+        "productos": [
+          { "nombre": "Banana", "peso": "1kg" },
+          { "nombre": "Frutilla", "peso": "500g" },
+          { "nombre": "Arándanos", "peso": "250g" },
+          { "nombre": "Naranja", "peso": "1kg" },
+          { "nombre": "Manzana", "peso": "1kg" }
+        ],
+        "descripcion": "Frutas ideales para un desayuno lleno de vitaminas y energía.",
+        "precio": 9800,
+        "imagen": "https://ejemplo.com/imagenes/combo-desayuno.jpg"
+      }
+    ]

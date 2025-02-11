@@ -1,10 +1,10 @@
 import { useContext, useState } from "react"
-import { productosContext } from "../../context/ProductosProvider"
 import { SeleccionKilos } from "../seleccionPesoKilos/SeleccionKilos";
+import { carritoContext } from "../../context/CarritoProvider";
 
-export const Modal = ({productoSelect, setIsProduct ,cancelarCarrito}) => {
+export const ModalProductos = ({productoSelect, setIsProduct ,cancelarCarrito}) => {
 
-  const {agregarCarrito} = useContext(productosContext);
+  const {agregarCarrito} = useContext(carritoContext);
   const [kilos, setKilos] = useState(1)
 
   const x = (producto, kilos) => {
