@@ -34,10 +34,11 @@ export const Combos = () => {
               </div>
           </div>
         </li>
-      )      
+      )
       : <p>Cargando...</p>
       }
 
+      
       {isCombo ? <ModalCombos combo={comboSelect} setIsCombo={setIsCombo}/> : ""}
     </div>
   )

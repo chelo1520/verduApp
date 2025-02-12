@@ -1,5 +1,25 @@
-export const ModalCombos = () => {
+import { v4 as uuidv4 } from "uuid";
+
+export const ModalCombos = ({combo, setIsCombo}) => {
   return (
-    <div>ModalCombos</div>
+    <div id="combo-background">
+      <div id="combo-container">
+        <img src={combo.imagen} alt={combo.nombre} />
+        <div>
+            <h2>{combo.nombre}</h2>
+            <div>
+                {combo.productos.map((prod) => 
+                  <li key={uuidv4()}>
+                      {prod.nombre} {prod.peso}
+                  </li>
+                )}
+            </div>
+        </div>
+        <div>
+          <button>Agregar</button>
+          <button onClick={() => setIsCombo(false)}>X</button>
+        </div>
+      </div>
+    </div>
   )
 }
