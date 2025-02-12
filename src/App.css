@@ -453,6 +453,11 @@ overflow-y: auto;
 .img-combo{
     display: flex;
     align-items: center;
+    height: 150px;
+}
+.img-combo img{
+    height: 150px;
+    object-fit: contain;
 }
 .titulo-combo{
     font-weight: 600;

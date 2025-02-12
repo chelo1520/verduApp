@@ -12,7 +12,7 @@
         ],
         "descripcion": "Ideal para preparar ensaladas saludables y frescas.",
         "precio": 8000,
-        "imagen": "https://ejemplo.com/imagenes/combo-ensalada.jpg"
+        "imagen": "../public/img-combos/ensalada.jpg"
       },
       {
         "id": 2,
@@ -27,7 +27,7 @@
         ],
         "descripcion": "Una selección de frutas frescas y deliciosas.",
         "precio": 9000,
-        "imagen": "https://ejemplo.com/imagenes/combo-frutal.jpg"
+        "imagen": "../public/img-combos/frutas1.jpg"
       },
       {
         "id": 3,
@@ -42,7 +42,7 @@
         ],
         "descripcion": "Todo lo necesario para hacer una sopa casera y nutritiva.",
         "precio": 7500,
-        "imagen": "https://ejemplo.com/imagenes/combo-sopa.jpg"
+        "imagen": "../public/img-combos/verduras1.jpg"
       },
       {
         "id": 4,
@@ -57,22 +57,7 @@
         ],
         "descripcion": "Perfecto para acompañar tu asado con vegetales a la parrilla.",
         "precio": 8500,
-        "imagen": "https://ejemplo.com/imagenes/combo-parrillero.jpg"
-      },
-      {
-        "id": 5,
-        "nombre": "Combo Energético",
-        "tipo": "fruta",
-        "productos": [
-          { "nombre": "Banana", "peso": "1kg" },
-          { "nombre": "Manzana", "peso": "1kg" },
-          { "nombre": "Naranja", "peso": "1kg" },
-          { "nombre": "Kiwi", "peso": "500g" },
-          { "nombre": "Frutilla", "peso": "500g" }
-        ],
-        "descripcion": "Frutas llenas de energía para tu día.",
-        "precio": 9500,
-        "imagen": "https://ejemplo.com/imagenes/combo-energetico.jpg"
+        "imagen": "../public/img-combos/verduras2.jpg"
       },
       {
         "id": 6,
@@ -87,7 +72,7 @@
         ],
         "descripcion": "Ingredientes ideales para jugos desintoxicantes y saludables.",
         "precio": 9200,
-        "imagen": "https://ejemplo.com/imagenes/combo-detox.jpg"
+        "imagen": "../public/img-combos/verduras3.jpg"
       },
       {
         "id": 7,
@@ -102,6 +87,6 @@
         ],
         "descripcion": "Frutas ideales para un desayuno lleno de vitaminas y energía.",
         "precio": 9800,
-        "imagen": "https://ejemplo.com/imagenes/combo-desayuno.jpg"
+        "imagen": "../public/img-combos/frutas3.jpg"
       }
     ]

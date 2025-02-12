@@ -1,14 +1,17 @@
 import { useContext, useState } from "react"
-import { CombosFrutas } from "../components/combos/CombosFrutas"
-import { CombosVerduras } from "../components/combos/CombosVerduras"
 import { ModalCombos } from "../components/modal/ModalCombos"
 import { combosContext } from "../context/CombosProvider"
 
 export const Combos = () => {
 
   const {combos} = useContext(combosContext)
-  //const [isCombo, setIsCombo] = useState(false)
+  const [comboSelect, setComboSelect] = useState(null)
+  const [isCombo, setIsCombo] = useState(false)
 
+  const mostrarCombo = (combo) => {
+    setComboSelect(combo)
+    setIsCombo(true)
+  }
 
   return (
     <div>
@@ -27,14 +30,15 @@ export const Combos = () => {
                   </div>
               </div>
               <div className="col-1 d-flex justify-content-end ">
-                  <button className="boton-combo"><i className="bi bi-arrow-bar-right"></i></button>
-          </div>
+                  <button onClick={() => mostrarCombo(combo)} className="boton-combo"><i className="bi bi-arrow-bar-right"></i></button>
+              </div>
           </div>
         </li>
       )      
       : <p>Cargando...</p>
       }
 
+      {isCombo ? <ModalCombos combo={comboSelect} setIsCombo={setIsCombo}/> : ""}
     </div>
   )
 }
