@@ -481,7 +481,6 @@ overflow-y: auto;
 #combo-background{
     position: fixed;
     z-index: 1000;
-    background-color: red;
     top: 0;
     left: 0;
     display: flex;
@@ -490,8 +489,35 @@ overflow-y: auto;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8);
     align-items: center;
+    justify-content: center;
 }
-#combo-modal img{
+#combo-container img{
     width: 300px;
     border-radius: 10px;
+}
+#combo-container{
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+}
+#combo-container li{
+    list-style: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+}
+#agregar-combo{
+    display: flex;
+    justify-content: space-between;
+}
+#agregar-combo{
+    margin-top: 20px;
+}
+#agregar-combo button:first-child{
+    background-color: var(--color-principal);
+}
+#agregar-combo button{
+    padding: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
 }

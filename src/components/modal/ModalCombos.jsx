@@ -10,14 +10,14 @@ export const ModalCombos = ({combo, setIsCombo}) => {
             <div>
                 {combo.productos.map((prod) => 
                   <li key={uuidv4()}>
-                      {prod.nombre} {prod.peso}
+                      {prod.nombre} - {prod.peso}
                   </li>
                 )}
             </div>
         </div>
-        <div>
-          <button>Agregar</button>
-          <button onClick={() => setIsCombo(false)}>X</button>
+        <div id="agregar-combo">
+          <button className="btn">Agregar</button>
+          <button className="btn btn-danger" onClick={() => setIsCombo(false)}>X</button>
         </div>
       </div>
     </div>
