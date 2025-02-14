@@ -8,26 +8,33 @@ export const CarritoProvider = ({children}) => {
     const [total, setTotal] = useState(null)
 
 
-    const agregarCarrito = (product, kilos) => {
-    
-        setCart((cart) => {
-          
-          const productoExistente = cart.find((item) => item.nombre === product.nombre);
-    
-          const nuevoCart = productoExistente ?
-            cart.map((item) => 
-                      item.nombre === product.nombre ? {...item , kilos: item.kilos + kilos, sumaPrecio: item.precio * (item.kilos + 1)} : item
-                    )
-          :
-            [...cart, {...product, kilos, sumaPrecio: product.precio * kilos  }];
-          
-            const sumador = nuevoCart.reduce((acumulador, item) => acumulador + item.sumaPrecio, 0)
-            setTotal(sumador)
+    const agregarCarrito = (product, kilos = 1, combo) => {
+
+
+    if(product){
+      setCart((cart) => {
         
-            return nuevoCart;
-        })
+        const productoExistente = cart.find((item) => item.nombre === product.nombre);
+  
+        const nuevoCart = productoExistente ?
+          cart.map((item) => 
+                    item.nombre === product.nombre ? {...item , kilos: item.kilos + kilos, sumaPrecio: item.precio * (item.kilos + 1)} : item
+                  )
+        :
+          [...cart, {...product, kilos, sumaPrecio: product.precio * kilos  }];
+        
+          const sumador = nuevoCart.reduce((acumulador, item) => acumulador + item.sumaPrecio, 0)
+          setTotal(sumador)
+      
+          return nuevoCart;
+      })
+    }
+
+    if(combo){
+      setCart((combo) => [...cart, {...combo, kilos : 1}])
+    }
     
-      }
+    }
     
       const eliminarProducto = (product) => {
         setCart((cart) => {

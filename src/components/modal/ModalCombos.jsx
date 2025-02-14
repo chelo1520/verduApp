@@ -1,6 +1,11 @@
+import { useContext } from "react";
 import { v4 as uuidv4 } from "uuid";
+import { carritoContext } from "../../context/CarritoProvider";
 
-export const ModalCombos = ({combo, setIsCombo}) => {
+export const ModalCombos = ({combo, setComboSelect}) => {
+
+  const {agregarCarrito} = useContext(carritoContext)
+
   return (
     <div id="combo-background">
       <div id="combo-container">
@@ -16,8 +21,11 @@ export const ModalCombos = ({combo, setIsCombo}) => {
             </div>
         </div>
         <div id="agregar-combo">
-          <button className="btn">Agregar</button>
-          <button className="btn btn-danger" onClick={() => setIsCombo(false)}>X</button>
+          <button className="btn" onClick={() => {
+            agregarCarrito(combo)
+            setComboSelect(null)
+          }}>Agregar</button>
+          <button className="btn btn-danger" onClick={() => setComboSelect(null)}>X</button>
         </div>
       </div>
     </div>

@@ -6,12 +6,10 @@ export const Combos = () => {
 
   const {combos} = useContext(combosContext)
   const [comboSelect, setComboSelect] = useState(null)
-  const [isCombo, setIsCombo] = useState(false)
+  //const [isCombo, setIsCombo] = useState(false)
+  //const {setIsProduct , isProduct} = useContext(combosContext)
 
-  const mostrarCombo = (combo) => {
-    setComboSelect(combo)
-    setIsCombo(true)
-  }
+
 
   return (
     <div>
@@ -30,7 +28,7 @@ export const Combos = () => {
                   </div>
               </div>
               <div className="col-1 d-flex justify-content-end ">
-                  <button onClick={() => mostrarCombo(combo)} className="boton-combo"><i className="bi bi-arrow-bar-right"></i></button>
+                  <button onClick={() => setComboSelect(combo)} className="boton-combo"><i className="bi bi-arrow-bar-right"></i></button>
               </div>
           </div>
         </li>
@@ -39,7 +37,7 @@ export const Combos = () => {
       }
 
       
-      {isCombo ? <ModalCombos combo={comboSelect} setIsCombo={setIsCombo}/> : ""}
+      {comboSelect ? <ModalCombos combo={comboSelect} setComboSelect={setComboSelect}/> : ""}
     </div>
   )
 }
