@@ -2,7 +2,8 @@ import "dotenv/config"
 import express from "express"
 import cors from "cors"
 import morgan from "morgan"
-import route from "../routes/productos.routes.js"
+import routeProducto from "../routes/productos.routes.js"
+import routeCombo from "../routes/combos.routes.js"
 
 const app = express()
 
@@ -14,7 +15,8 @@ app.use(express.json())
 
 
 //Rutas
-app.use("/",route)
+app.use("/productos", routeProducto)
+app.use("/combos", routeCombo)
 
 
 export default app;

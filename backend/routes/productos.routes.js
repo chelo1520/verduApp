@@ -1,17 +1,11 @@
 import { Router } from "express";
-
-const route = Router()
-
-route.post("/", (req, res) => {
-    console.log("post recibido")
-
-    res.send("server iniciado")
-})
+import { cargaProducto, getProduct } from "../controllers/productosControllers.js";
 
 
-route.get("/" , (req, res) => {
-    console.log("visitado")
-    res.send("Backend listo")
-})
+const routeProducto = Router()
 
-export default route;
+routeProducto.post("/", cargaProducto)
+
+routeProducto.get("/" , getProduct)
+
+export default routeProducto;
