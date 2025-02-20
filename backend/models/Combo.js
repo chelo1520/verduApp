@@ -11,6 +11,6 @@ const ComboSchema = new mongoose.Schema({
     "descripcion": String,
     "precio": {type: Number, required: true},
     "imagen": {type: String, required: true}
-  },)
+  })
 
 export default mongoose.model("Combo", ComboSchema)
