@@ -1,10 +1,15 @@
-import Productos from "../models/Producto.js"
+import Producto from "../models/Producto.js"
 
 export const getProduct = async(req, res) => {
 
     try {
 
-        const data = await Productos.find()
+        const data = await Producto.find()
+
+        
+        if(Object.keys(data).length === 0 ){
+            return res.status(200).json({mensaje: `No hay productos existentes`})
+        }
         
         res.json(data)
 
@@ -18,13 +23,20 @@ export const getProduct = async(req, res) => {
 export const cargaProducto = async(req, res) => {
 
     try {
-        const producto = req.body
+        const {nombre , oferta, precio, tipo, unidad, imagen } = req.body
 
-        if (Object.keys(producto).length === 0) {
+        if (!nombre || !tipo || !oferta || !precio || !imagen) {
             return res.status(400).json({ mensaje: "Error, llene todos los campos del producto antes de subirlo" });
         }
 
-        const productoSave = await new Productos(producto)
+        const productoSave = await new Producto({
+            nombre,
+            oferta,
+            precio,
+            tipo,
+            unidad,
+            imagen
+        })
 
         await productoSave.save();
 
@@ -41,13 +53,13 @@ export const eliminarProducto = async(req, res) => {
 
         const {id} = req.params;
 
-        const producto = await Productos.findById(id)
+        const producto = await Producto.findById(id)
 
         if(!producto){
             return res.status(404).json({mensaje: `El producto que quiere eliminar no existe`})
         }
 
-        await Productos.findByIdAndDelete(producto)
+        await Producto.findByIdAndDelete(producto)
 
         res.status(200).json({mensaje: `El siguiete producto fue eliminado => ${producto.nombre}`})
 
@@ -61,17 +73,13 @@ export const actualizarProducto = async(req, res) => {
         const {id} = req.params;
         const actualizar = req.body;
 
-        const producto = await Productos.findById(id)
+        const productoActualizado = await Producto.findByIdAndUpdate(id, actualizar, { new: true });
 
-        if(!producto){
-            return res.status(404).json({mensaje: `El producto que quiere actualizar no existe`})
+        if (!productoActualizado) {
+            return res.status(404).json({ mensaje: `El producto que quiere actualizar no existe` });
         }
 
-
-
-        await Productos.findByIdAndUpdate(id, actualizar, {new: true})
-
-        res.status(200).json({mensaje: `El siguiete producto fue actualizado => ${producto.nombre}`})
+        res.status(200).json({ mensaje: `El siguiente producto fue actualizado => ${productoActualizado.nombre}` });
 
     } catch (error) {
         res.status(500).json({mensaje: `Error al actualizar producto : ${error}`})

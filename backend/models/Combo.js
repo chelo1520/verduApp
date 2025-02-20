@@ -4,7 +4,7 @@ const ComboSchema = new mongoose.Schema({
     "nombre": {type: String, required: true},
     "tipo": {type: String, required: true},
     "productos": [
-      { "nombre": {type: mongoose.Schema.Types.ObjectId, ref: "Producto", required: true},
+      { "ProductoId": {type: mongoose.Schema.Types.ObjectId, ref: "Producto", required: true},
         "peso": {type: String, required: true} 
       }
     ],

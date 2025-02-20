@@ -13,4 +13,4 @@ const ProductoSchema = new mongoose.Schema({
     "descuento": Number
 })
 
-export default mongoose.model("Producto", ProductoSchema)
+export default mongoose.model("Productos", ProductoSchema)
