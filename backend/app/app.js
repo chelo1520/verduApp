@@ -6,6 +6,7 @@ import morgan from "morgan"
 import routeProducto from "../routes/productos.routes.js"
 import routeCombo from "../routes/combos.routes.js"
 import routeAdmin from "../routes/admin.routes.js"
+import routeDireccion from "../routes/autocompletado.routes.js"
 
 const app = express()
 
@@ -19,6 +20,7 @@ app.use(cookieParser());
 app.use("/productos", routeProducto)
 app.use("/combos", routeCombo)
 app.use("/dashboard", routeAdmin)
+app.use("/autocompletado", routeDireccion)
 
 
 export default app;
