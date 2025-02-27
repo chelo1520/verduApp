@@ -521,3 +521,21 @@ overflow-y: auto;
     font-weight: bold;
     color: white;
 }
+
+/*direcciones*/
+
+#direcciones-container{
+    position: fixed;
+    z-index: 10;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    min-width: 300px;
+    max-width: 440px;
+    margin-top: -20px;
+}
+
+
+.desactivado{
+    opacity: 0;
+}

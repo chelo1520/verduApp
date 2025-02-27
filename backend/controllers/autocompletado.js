@@ -14,7 +14,7 @@ const autocompletado = async(req, res) =>{
             params: {
                 access_token: key,
                 autocomplete: true,
-                limit: 5
+                limit: 1
             }
         })
 
