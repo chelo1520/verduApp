@@ -7,6 +7,7 @@ import routeProducto from "../routes/productos.routes.js"
 import routeCombo from "../routes/combos.routes.js"
 import routeAdmin from "../routes/admin.routes.js"
 import routeDireccion from "../routes/autocompletado.routes.js"
+import verificarToken from "../middlewares/verificarToken.js"
 
 const app = express()
 
@@ -19,8 +20,8 @@ app.use(cookieParser());
 //Rutas
 app.use("/productos", routeProducto)
 app.use("/combos", routeCombo)
-app.use("/dashboard", routeAdmin)
 app.use("/autocompletado", routeDireccion)
+app.use("/dashboard", routeAdmin)
 
 
 export default app;

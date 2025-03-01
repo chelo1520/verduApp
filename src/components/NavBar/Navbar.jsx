@@ -1,7 +1,12 @@
 import { NavLink } from "react-router-dom"
+import { carritoContext } from "../../context/CarritoProvider"
+import { useContext } from "react"
 
 
 export const Navbar = () => {
+
+  const { cart } = useContext(carritoContext)
+
   return (
     <div className="conatiner nav-container">
       <ul className="nav">
@@ -14,7 +19,10 @@ export const Navbar = () => {
 
         <li className="nav-item">
           <NavLink to="/cart" className={({isActive}) => `nav-link ${isActive ? "active" : ""}`}>
-            <i className="bi bi-cart2"></i>
+            <div className="position-relative">
+              <i className="bi bi-cart2"></i>
+              <div className={cart?.length > 0 ? "punto-rojo-carrito" : ""}></div>
+            </div>
           </NavLink>
         </li>
 

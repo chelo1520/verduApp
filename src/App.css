@@ -421,6 +421,15 @@ overflow-y: auto;
     justify-content: center;
     padding: 0;
 }
+.punto-rojo-carrito{
+    position: absolute;
+    background-color: red;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    top: 0;
+    right: 0;
+}
 
 
 /* Filtros */
@@ -538,4 +547,8 @@ overflow-y: auto;
 
 .desactivado{
     opacity: 0;
+}
+
+.list-group-item{
+    cursor: pointer;
 }

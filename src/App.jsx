@@ -1,12 +1,15 @@
 import './App.css'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { Home } from './pages/Home'
 import { Cart } from './pages/Cart'
 import { Navbar } from './components/NavBar/NavBar'
 import { Combos } from './pages/Combos'
+import { Dashboard } from './pages/dashboard/Dashboard'
+import { Login } from './pages/dashboard/Login'
 
 function App() {
 
+  const hayToken = localStorage.getItem("token")
 
   return (
       <BrowserRouter>
@@ -17,6 +20,8 @@ function App() {
                 <Route path='/' element={<Home/>}/>
                 <Route path='/cart' element={<Cart/>}/>
                 <Route path='/combos' element={<Combos/>}/>
+                <Route path='/dashboard' element={hayToken ? <Dashboard/> : <Navigate to="/dashboard/login"/>}/>
+                <Route path='/dashboard/login' element={<Login/>}/>
               </Routes>
             </div>
         </div>

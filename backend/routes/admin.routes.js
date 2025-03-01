@@ -11,6 +11,11 @@ const routeAdmin = Router()
 routeAdmin.post("/login", login)
 routeAdmin.post("/logout", logout)
 
+//dashboard
+routeAdmin.get("/", verificarToken, (req, res) => {
+    res.send("Estas en el dashboard")
+})
+
 //productos
 routeAdmin.post("/productos", verificarToken, cargaProducto)
 routeAdmin.delete("/productos/:id", verificarToken, eliminarProducto)
