@@ -6,10 +6,13 @@ import { Navbar } from './components/NavBar/NavBar'
 import { Combos } from './pages/Combos'
 import { Dashboard } from './pages/dashboard/Dashboard'
 import { Login } from './pages/dashboard/Login'
+import { useContext } from 'react'
+import { useAuth } from './context/AuthProvider'
 
 function App() {
 
-  const hayToken = localStorage.getItem("token")
+  const {userAutenticado} = useContext(useAuth)
+
 
   return (
       <BrowserRouter>
@@ -20,7 +23,7 @@ function App() {
                 <Route path='/' element={<Home/>}/>
                 <Route path='/cart' element={<Cart/>}/>
                 <Route path='/combos' element={<Combos/>}/>
-                <Route path='/dashboard' element={hayToken ? <Dashboard/> : <Navigate to="/dashboard/login"/>}/>
+                <Route path='/dashboard' element={userAutenticado ? <Dashboard/> : <Navigate to="/dashboard/login"/>}/>
                 <Route path='/dashboard/login' element={<Login/>}/>
               </Routes>
             </div>

@@ -31,7 +31,7 @@ export const Productos = ({productosFiltrados}) => {
                 {mostrarProductos && mostrarProductos.length > 0 
                     ? 
                         mostrarProductos.map((producto) => 
-                            <li className="card" key={producto.id}>
+                            <li className="card card-productos" key={producto.id}>
                                 <img src={producto.imagen} className="card-img-top" alt={producto.nombre}/>
                                 <div className="card-body">
                                     <h6 className="card-title">{producto.nombre}</h6>

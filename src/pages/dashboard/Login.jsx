@@ -1,40 +1,60 @@
-import { useForm } from "react-hook-form"
+import { useForm } from "react-hook-form";
+import { login } from "../../api/login.js";
+import { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
+import { useAuth } from "../../context/AuthProvider.jsx";
+
 
 export const Login = () => {
+  const { register, handleSubmit, formState: { errors } } = useForm();
+  const navigate = useNavigate()
+  const {loginAdmin, userAutenticado} = useContext(useAuth)
 
-    const {register, handleSubmit, formState: {errors} } = useForm()
-
-    const login = (values) => {
-        console.log(values)
-    }
+  useEffect(() => {
+    if(userAutenticado) navigate("/dashboard")
+  }, [userAutenticado])
+  
 
   return (
-    <div>
-        <h1>Inicie Sesion</h1>
-        <form onSubmit={handleSubmit(login)}>
-            <label htmlFor="username">Nombre de Usuario</label>
-            <input 
-                type="text"
-                name="username"
-                id="username"
-                placeholder="Ingrese nombre de usuario"
-                {...register("username", {required: "Por favor ingresa tu nombre de usuario !"})}
-            />
-            {errors.username && <p>{errors.username.message}</p>}
+    <div className="container mt-5">
+      <div className="row justify-content-center">
+        <div className="col-md-8">
+          <div className="card shadow p-4">
+            <h2 className="text-center mb-4">Iniciar Sesión</h2>
+            <form onSubmit={handleSubmit(loginAdmin)}>
+              {/* Nombre de usuario */}
+              <div className="mb-3">
+                <label htmlFor="email" className="form-label">Nombre de Usuario</label>
+                <input 
+                  type="text"
+                  className={`form-control ${errors.username ? 'is-invalid' : ''}`}
+                  id="email"
+                  placeholder="Ingrese su nombre de usuario"
+                  {...register("email", { required: "Por favor ingresa tu nombre de usuario!" })}
+                />
+                {errors.email && <div className="invalid-feedback">{errors.email.message}</div>}
+              </div>
 
+              {/* Contraseña */}
+              <div className="mb-3">
+                <label htmlFor="password" className="form-label">Contraseña</label>
+                <input 
+                  type="password"
+                  className={`form-control ${errors.password ? 'is-invalid' : ''}`}
+                  id="password"
+                  placeholder="Ingrese su contraseña"
+                  {...register("password", { required: "Contraseña requerida" })}
+                />
+                {errors.password && <div className="invalid-feedback">{errors.password.message}</div>}
+              </div>
 
-            <label htmlFor="password">Contraseña</label>
-            <input 
-                type="password"
-                name="password"
-                id="password"
-                placeholder="Ingrese nombre de usuario"
-                {...register("password", {required: "Contraseña requerida"})}
-            />
-            {errors.password && <p>{errors.password.message}</p>}
-
-            <button type="submit">Iniciar Sesion</button>
-        </form>
+              {/* Botón de envío */}
+              <button type="submit" className="btn btn-primary w-100">Iniciar Sesión</button>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
-  )
-}
+  );
+};

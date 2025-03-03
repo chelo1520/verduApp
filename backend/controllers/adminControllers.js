@@ -12,13 +12,13 @@ export const login = async(req, res) => {
         return res.status(400).json({mensaje: `Llene todo los campos`})
     }
 
-    const user = await Admin.findOne({email})
+    const userData = await Admin.findOne({email})
 
-    if(!user){
+    if(!userData){
         return res.status(400).json({mensaje: `Email no registrado o incorrecto!`})
     }
 
-    const passwordVerify = await bcrypt.compare(password, user.password)
+    const passwordVerify = await bcrypt.compare(password, userData.password)
 
     if(!passwordVerify){
         return res.status(400).json({mensaje: `Contraseña incorrecta`})
@@ -26,14 +26,14 @@ export const login = async(req, res) => {
 
     
     
-    const userSinPassword = {
-        "email": user.email,
-        "id": user._id
+    const user = {
+        "email": userData.email,
+        "id": userData._id
     }
     
     const token = await Jwt.sign({
-        "_id": userSinPassword.id,
-        "email": userSinPassword.email
+        "_id": user.id,
+        "email": user.email
     }, JWT_SECRET , {
         expiresIn: "1d"
     })
@@ -45,7 +45,7 @@ export const login = async(req, res) => {
         sameSite: "strict", 
     })
 
-    res.json({userSinPassword})
+    res.json({user})
 
   } catch (error) {
     res.status(500).json({mensaje: `Error del servidor al iniciar sesion : ${error}`})
