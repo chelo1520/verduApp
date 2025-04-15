@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 export const Filtros = ({ setTiposFiltros, tiposFiltros , setOfertas , ofertas}) => {
 
   const filtroBotones = (tipo) => {

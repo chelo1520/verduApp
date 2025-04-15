@@ -9,7 +9,7 @@ const verificarToken = async(req, res, next) =>{
         const token = req.cookies.token;
 
         if(!token){
-            console.log("no hay token")
+            console.log("no hay token ", token)
             return res.status(401).json({mensaje: "Accion no valida"})
         }
 

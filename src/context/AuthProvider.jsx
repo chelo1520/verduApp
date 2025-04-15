@@ -23,8 +23,8 @@ export const AuthProvider = ({children}) => {
   return (
     <useAuth.Provider value={{
         loginAdmin, 
-        userAutenticado}
-      }>
+        userAutenticado
+      }}>
       {children}
     </useAuth.Provider>
   )

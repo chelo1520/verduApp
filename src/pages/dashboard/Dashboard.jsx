@@ -1,5 +1,11 @@
+import { CargaProducto } from "./CargaProducto";
+import { CRUDcombos } from "./CRUDcombos";
+
 export const Dashboard = () => {
   return (
-    <div>Dashboard</div>
-  )
-}
+    <div>
+      <CargaProducto/>
+      <CRUDcombos />
+    </div>
+  );
+};

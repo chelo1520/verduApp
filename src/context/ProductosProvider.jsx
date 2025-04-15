@@ -12,7 +12,7 @@ export const ProductosProvider = ({children}) => {
 
     const fetchProductos = async () => {
       try {
-        const resultado = await fetch("../public/data/productosLista.json");
+        const resultado = await fetch("http://localhost:3000/productos");
         const data = await resultado.json();
         setProductos(data)
       } catch (error) {

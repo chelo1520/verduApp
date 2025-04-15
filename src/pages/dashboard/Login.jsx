@@ -1,8 +1,6 @@
 import { useForm } from "react-hook-form";
-import { login } from "../../api/login.js";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import Cookies from "js-cookie";
 import { useAuth } from "../../context/AuthProvider.jsx";
 
 

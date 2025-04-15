@@ -25,8 +25,8 @@ export const cargaProducto = async(req, res) => {
     try {
         const {nombre , oferta, precio, tipo, unidad, imagen } = req.body
 
-        if (!nombre || !tipo || !oferta || !precio || !imagen) {
-            return res.status(400).json({ mensaje: "Error, llene todos los campos del producto antes de subirlo" });
+        if (!nombre || !tipo || !precio || !imagen) {
+            return res.status(400).json({ mensaje: `Error, llene todos los campos del producto antes de subirlo`});
         }
 
         const productoSave = await new Producto({

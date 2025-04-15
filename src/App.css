@@ -18,13 +18,17 @@
     font-size: 29px;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
     position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
     bottom: 0;
     height: 50px;
+    min-width: 350px;
+    max-width: 550px;
     width: 100%;
     align-items: center;
     text-shadow: 0 0 1px currentColor;
     height: 50px;
-    border-radius: 15px;
+    border-radius: 15px 15px 0 0;
 }
 
 
