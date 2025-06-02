@@ -1,5 +1,5 @@
 import { useContext, useState } from "react"
-import { ModalCombos } from "../components/modal/ModalCombos"
+import { ModalCombos } from "../components/modal/combos/ModalCombos"
 import { combosContext } from "../context/CombosProvider"
 
 export const Combos = () => {

@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { v4 as uuidv4 } from "uuid";
-import { carritoContext } from "../../context/CarritoProvider";
+import { carritoContext } from "../../../context/CarritoProvider";
 
 export const ModalCombos = ({combo, setComboSelect}) => {
 
