@@ -162,9 +162,8 @@
     color: #53B175;
 }
 .card-title{
-    font-size: 1.2rem;
     margin: 0;
-    font-size: clamp(14px, 2vw, 20px); /* Escala entre 14px y 20px según el espacio */
+    font-size: clamp(12px, 2vw, 18px); /* Escala entre 14px y 20px según el espacio */
     text-align: center; /* Centrar el texto */
 }
 .card-img-top{

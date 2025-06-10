@@ -6,6 +6,7 @@ export const combosContext = createContext()
 export const CombosProvider = ({children}) => {
 
   const [combos, setCombos] = useState(null)
+  const [comboProducto, setComboProducto] = useState([])
   
   useEffect(() => {
     const getCombos = async () => {
@@ -21,15 +22,11 @@ export const CombosProvider = ({children}) => {
     getCombos()
   }, [])
 
-  
-  useEffect(() => {
-    console.log(combos)
-  }, [combos])
-  
+
   
 
   return (
-    <combosContext.Provider value={{combos}}>
+    <combosContext.Provider value={{combos, setComboProducto, comboProducto}}>
         {children}
     </combosContext.Provider>
   )

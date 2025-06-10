@@ -31,7 +31,7 @@ export const CarritoProvider = ({children}) => {
     }
 
     if(combo){
-      setCart((combo) => [...cart, {...combo, kilos : 1}])
+      setCart((cart) => [...cart, {...combo, kilos: 1, sumaPrecio: combo.precio * 1}])
     }
     
     }

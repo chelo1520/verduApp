@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { useAuth } from "../../context/AuthProvider";
+import { combosContext} from "../../context/CombosProvider";
 
 export const ProductoCard = ({
   producto,
@@ -9,6 +10,8 @@ export const ProductoCard = ({
   modoAgregarCombo,
 }) => {
   const { userAutenticado } = useContext(useAuth);
+  const {setComboProducto} = useContext(combosContext)
+
 
   return (
     <li className="card card-productos" key={producto._id}>
@@ -23,7 +26,7 @@ export const ProductoCard = ({
         {userAutenticado && modoAgregarCombo ? (
           <div className="botonesAdmin">
             <button
-              onClick={() => console.log("Producto agregado al combo")}
+              onClick={() => setComboProducto(item => [...item, producto])}
               className="btn btn-warning"
             >
               Agregar al combo

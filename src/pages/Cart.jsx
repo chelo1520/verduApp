@@ -1,10 +1,9 @@
 import { useContext } from "react"
 import { carritoContext } from "../context/CarritoProvider";
 
-export const Cart = ({producto}) => {
+export const Cart = () => {
 
-  const {cart, eliminarProducto, incrementarKilos, restarKilos, total} = useContext(carritoContext); 
-
+  const {cart, eliminarProducto, incrementarKilos, restarKilos, total} = useContext(carritoContext);
 
   return (
     <div className="container" id="carrito-container">
@@ -12,7 +11,7 @@ export const Cart = ({producto}) => {
 
       <div id="productosListaCarrito">
         {cart && cart.length > 0 ? cart.map((prod) => (
-              <li key={prod.id} className="card row d-flex justify-content-center card-carrito">
+              <li key={prod._id} className="card row d-flex justify-content-center card-carrito">
                 <div className="col-3 h-100">
                   <img src={prod.imagen} className="img-carrito" alt="" />
                 </div>
@@ -25,7 +24,7 @@ export const Cart = ({producto}) => {
         
                   <div className="botonesCantidad d-flex justify-content-center align-items-center row">
                     <button className="boton-sumar bg-danger col-3" onClick={() => restarKilos(prod)}>-</button>
-                    <p className="contador-kg col-4">{prod.kilos}</p>
+                    <p className="contador-kg col-4">{Number(prod.kilos)}</p>
                     <button className="boton-sumar col-3" onClick={() => incrementarKilos(prod)}>+</button>
                   </div>
         

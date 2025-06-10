@@ -1,19 +1,17 @@
+import { useContext } from "react";
 import { useForm } from "react-hook-form";
-import { useLocation, useNavigate } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
+import { combosContext } from "../../context/CombosProvider";
 
 export const CRUDcombos = () => {
-    const location = useLocation();
     const navigate = useNavigate();
-    const productosCombos = location.state?.productosCombos || null;
+    const {comboProducto} = useContext(combosContext)
+
     const {
         register,
         handleSubmit,
         formState: { errors },
-      } = useForm({
-        defaultValues: {
-          productos: productosCombos
-        }
-    });
+      } = useForm();
 
     const cargaEditarCombo = (combo) => {
       console.log(combo)
@@ -80,7 +78,14 @@ export const CRUDcombos = () => {
               <button className="btn btn-secondary" onClick={agregarProductosAlCombo}>Agregar productos</button>
               <h3>Productos en Combo</h3>
               <div>
-
+                  {comboProducto && comboProducto.length > 0 ? 
+                  comboProducto.map((prod) => 
+                    <li key={prod._id}>
+                        <h5>{prod.nombre}</h5>
+                        <h5>{prod.precio}</h5>
+                    </li>
+                  ) 
+                  : ""}
               </div>
             </div>
     
